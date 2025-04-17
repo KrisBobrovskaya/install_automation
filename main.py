@@ -12,7 +12,7 @@ def load_program_list(file_name):
         with open(file_name, "r", encoding="utf-8") as file:
             return json.load(file)
     except FileNotFoundError:
-        # "Program list file not found."
+        messagebox.showerror("Error", f"Program list file not found: {file_name}")
         return {}
 
 
@@ -37,11 +37,11 @@ def ensure_chocolatey_installed():
         return True
     except subprocess.CalledProcessError as e:
         # Ошибка при установке
-        #f"Error during Chocolatey installation: {e}"
+        messagebox.showerror("Error", f"Error during Chocolatey installation: {e}")
         return False
     except FileNotFoundError:
         # PowerShell не найден
-        #"PowerShell not found. Chocolatey installation failed."
+        messagebox.showerror("Error", "PowerShell not found. Chocolatey installation failed.")
         return False
 
 def is_installed_win(package_name):
@@ -53,7 +53,8 @@ def is_installed_win(package_name):
             check=True
         )
         return package_name.lower() in result.stdout.lower()
-    except subprocess.CalledProcessError:
+    except subprocess.CalledProcessError as e:
+        messagebox.showerror("Error", f"[Linux] Error installing {package_name}: {e}")
         return False
 
 
@@ -66,9 +67,8 @@ def install_for_win(package_name):
         # f"[Windows] Installed: {package_name}"
         return True
     except subprocess.CalledProcessError as e:
-        # f"[Windows] Error installing {package_name}: {e}"
-        pass
-    return False
+        messagebox.showerror("Error", f"[Windows] Error installing {package_name}: {e}")
+        return False
 
 
 def is_installed_linux(package_name):
@@ -80,7 +80,8 @@ def is_installed_linux(package_name):
             stderr=subprocess.DEVNULL
         )
         return True
-    except subprocess.CalledProcessError:
+    except subprocess.CalledProcessError as e:
+        messagebox.showerror("Error", f"[Linux] Error installing {package_name}: {e}")
         return False
 
 
@@ -94,26 +95,8 @@ def install_for_linux(package_name):
         # f"[Linux] Installed: {package_name}"
         return True
     except subprocess.CalledProcessError as e:
-        # f"[Linux] Error installing {package_name}: {e}"
-        pass
-    return False
-
-#
-# def run_installer(programs_list):
-#     if "win" in os_type:
-#         if not ensure_chocolatey_installed():
-#             # "Unable to continue without Chocolatey."
-#             return
-#         for prog in programs_list.get("windows", []):
-#             install_for_win(prog)
-#
-#     elif "linux" in os_type:
-#         for prog in programs_list.get("linux", []):
-#             install_for_linux(prog)
-#
-#     else:
-#         # "Unsupported operating system:", os_type
-#         pass
+        messagebox.showerror("Error", f"[Linux] Error installing {package_name}: {e}")
+        return False
 
 
 if __name__ == "__main__":

@@ -5,14 +5,17 @@ import json
 import platform
 import subprocess
 import os
+import sys
 
 
 def load_program_list(file_name):
     try:
+        if getattr(sys, 'frozen', False):
+            file_name = os.path.join(sys._MEIPASS, file_name)
+
         with open(file_name, "r", encoding="utf-8") as file:
             return json.load(file)
     except FileNotFoundError:
-        messagebox.showerror("Error", f"Program list file not found: {file_name}")
         return {}
 
 

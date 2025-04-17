@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Chrome",
+    "windows": "Google.Chrome",
+    "linux": "google-chrome-stable"
+  },
+  {
+    "name": "7-Zip",
+    "windows": "7zip.7zip",
+    "linux": "p7zip-full"
+  },
+  {
+    "name": "Notepad++",
+    "windows": "Notepad++.Notepad++",
+    "linux": "gedit"
+  },
+  {
+    "name": "Telegram",
+    "windows": "Telegram.TelegramDesktop",
+    "linux": "telegram-desktop"
+  }
+]

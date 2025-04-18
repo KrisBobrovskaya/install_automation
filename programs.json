@@ -1,22 +1,80 @@
 [
   {
     "name": "Chrome",
-    "windows": "Google.Chrome",
-    "linux": "google-chrome-stable"
+    "windows": "googlechrome",
+    "linux": "google-chrome-stable",
+    "exe": "chrome.exe"
   },
   {
     "name": "7-Zip",
-    "windows": "7zip.7zip",
-    "linux": "p7zip-full"
+    "windows": "7zip",
+    "linux": "p7zip-full",
+    "exe": "7zFM.exe"
   },
   {
     "name": "Notepad++",
-    "windows": "Notepad++.Notepad++",
-    "linux": "gedit"
+    "windows": "notepadplusplus",
+    "linux": "gedit",
+    "exe": "notepad++.exe"
   },
   {
     "name": "Telegram",
-    "windows": "Telegram.TelegramDesktop",
-    "linux": "telegram-desktop"
+    "windows": "telegram",
+    "linux": "telegram-desktop",
+    "exe": "Telegram.exe"
+  },
+  {
+    "name": "VLC Media Player",
+    "windows": "vlc",
+    "linux": "vlc",
+    "exe": "vlc.exe"
+  },
+  {
+    "name": "Visual Studio Code",
+    "windows": "vscode",
+    "linux": "code",
+    "exe": "Code.exe"
+  },
+  {
+    "name": "Spotify",
+    "windows": "spotify",
+    "linux": "spotify",
+    "exe": "Spotify.exe"
+  },
+  {
+    "name": "Git",
+    "windows": "git",
+    "linux": "git",
+    "exe": "git.exe"
+  },
+  {
+    "name": "Java",
+    "windows": "temurin",
+    "linux": "openjdk-11-jdk",
+    "exe": "java.exe"
+  },
+  {
+    "name": "Python",
+    "windows": "python",
+    "linux": "python3",
+    "exe": "python.exe"
+  },
+  {
+    "name": "Node.js",
+    "windows": "nodejs",
+    "linux": "nodejs",
+    "exe": "node.exe"
+  },
+  {
+    "name": "Docker",
+    "windows": "docker-desktop",
+    "linux": "docker",
+    "exe": "docker.exe"
+  },
+  {
+    "name": "Slack",
+    "windows": "slack",
+    "linux": "slack",
+    "exe": "slack.exe"
   }
 ]
